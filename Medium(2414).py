@@ -12,14 +12,13 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        tmax = 1
         start = 1
         current = 1 
         for i in range(1,len(s)):
             if ord(s[i]) - ord(s[i-1]) == 1:
                 current+= 1
-                tmax = max(current,start)
+                start = max(current,start)
             else:
                 current = 1
 
-        return tmax
+        return start
